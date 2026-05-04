@@ -310,7 +310,7 @@ function Portfolio() {
             <span className="eyebrow">Портфолио</span>
             <h2 className="h-section">Свадьбы, <em>которые</em> мы вели</h2>
             <p className="section-head__lead">
-              Кадры с реальных свадеб. Полный фотоотчёт и видео по каждой работе — высылаем по запросу.
+              Кадры с реальных свадеб.
             </p>
           </div>
         </div>

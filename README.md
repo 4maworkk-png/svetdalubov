@@ -4,7 +4,7 @@ This is a **handoff bundle** from Claude Design (claude.ai/design)
 
 A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for r
 
-## What you should do — IMPORTANT
+## What you should do — IMPORTAN
 
 **Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
 

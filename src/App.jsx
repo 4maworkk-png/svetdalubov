@@ -298,7 +298,6 @@ const PORTFOLIO = [
   { src: '/assets/gallery/g02.jpg', size: 'stack-r1', place: 'Сценический комплект',  label: 'Свет + звук' },
   { src: '/assets/gallery/g05.jpg', size: 'stack-r2', place: 'Колонный зал',           label: 'Подсветка колонн' },
   { src: '/assets/gallery/g01.jpg', size: 'wide',     place: 'Первый танец',           label: 'Свет + эффекты' },
-  { src: '/assets/gallery/g04.jpg', size: 'bottom',   place: 'Камерная площадка',      label: 'DJ + звук' },
 ]
 
 function Portfolio() {

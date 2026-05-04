@@ -566,8 +566,7 @@ p.lead{
   grid-template-areas:
     "tall-l  stack-r1"
     "tall-l  stack-r2"
-    "wide    wide"
-    "bottom  bottom";
+    "wide    wide";
 }
 .gallery__item{
   position: relative;

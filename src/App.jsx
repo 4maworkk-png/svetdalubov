@@ -294,7 +294,7 @@ function Process() {
   Row 4: bottom (full width, landscape crop)
 */
 const PORTFOLIO = [
-  { src: '/assets/gallery/g03.jpg', size: 'tall-l',   place: 'Екатерининский дворец', label: 'Свет' },
+  { src: '/assets/gallery/g06.jpg', size: 'tall-l',   place: 'Банкетный зал', label: 'Свет + эффекты' },
   { src: '/assets/gallery/g02.jpg', size: 'stack-r1', place: 'Сценический комплект',  label: 'Свет + звук' },
   { src: '/assets/gallery/g05.jpg', size: 'stack-r2', place: 'Колонный зал',           label: 'Подсветка колонн' },
   { src: '/assets/gallery/g01.jpg', size: 'wide',     place: 'Первый танец',           label: 'Свет + эффекты' },

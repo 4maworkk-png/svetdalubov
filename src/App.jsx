@@ -531,7 +531,7 @@ function Contact() {
               </div>
               <div className="contact__row">
                 <span className="label">Склад и офис</span>
-                <span className="value">Санкт-Петербург,<br />ул. Большая Зеленина, 28</span>
+                <span className="value">Санкт-Петербург,<br />ул. Бехтерева, 2</span>
               </div>
             </div>
           </div>

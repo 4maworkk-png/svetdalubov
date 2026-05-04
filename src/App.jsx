@@ -519,11 +519,15 @@ function Contact() {
             <div className="contact__details">
               <div className="contact__row">
                 <span className="label">Телефон</span>
-                <a href="tel:+78121234567" className="value">+7 (812) 123-45-67</a>
+                <a href="tel:+79219325350" className="value">+7 (921) 932-53-50</a>
               </div>
               <div className="contact__row">
                 <span className="label">Почта</span>
-                <a href="mailto:hello@svetdalubov.ru" className="value">hello@svetdalubov.ru</a>
+                <a href="mailto:svetdalubov@mail.ru" className="value">svetdalubov@mail.ru</a>
+              </div>
+              <div className="contact__row">
+                <span className="label">Telegram</span>
+                <a href="https://t.me/soundgarage98" target="_blank" rel="noreferrer" className="value">@soundgarage98</a>
               </div>
               <div className="contact__row">
                 <span className="label">Склад и офис</span>
@@ -565,9 +569,9 @@ function Footer() {
           <div>
             <h6>Связь</h6>
             <ul>
-              <li><a href="tel:+78121234567">+7 (812) 123-45-67</a></li>
-              <li><a href="mailto:hello@svetdalubov.ru">hello@svetdalubov.ru</a></li>
-              <li><a href="#" target="_blank" rel="noreferrer">Telegram</a></li>
+              <li><a href="tel:+79219325350">+7 (921) 932-53-50</a></li>
+              <li><a href="mailto:svetdalubov@mail.ru">svetdalubov@mail.ru</a></li>
+              <li><a href="https://t.me/soundgarage98" target="_blank" rel="noreferrer">Telegram</a></li>
             </ul>
           </div>
         </div>

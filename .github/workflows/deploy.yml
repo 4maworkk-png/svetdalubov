@@ -20,7 +20,7 @@ jobs:
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.VDS_USER }}@${{ secrets.VDS_HOST }} "
             cd /var/www/svetdalubov &&
             git pull origin main &&
-            npm install --production &&
+            npm install &&
             npm run build &&
             pm2 restart svetdalubov
           "

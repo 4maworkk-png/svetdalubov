@@ -602,10 +602,10 @@ p.lead{
 }
 .gallery__item:hover .gallery__caption{ opacity: 1; transform: translateY(0); }
 
-.gallery__item--tall-l   { grid-area: tall-l;   aspect-ratio: 3/4; }
+.gallery__item--tall-l   { grid-area: tall-l; }
 .gallery__item--stack-r1 { grid-area: stack-r1; aspect-ratio: 16/9; }
 .gallery__item--stack-r2 { grid-area: stack-r2; aspect-ratio: 16/9; }
-.gallery__item--wide     { grid-area: wide;     aspect-ratio: 21/7; }
+.gallery__item--wide     { grid-area: wide;     aspect-ratio: 21/9; }
 .gallery__item--bottom   { grid-area: bottom;   aspect-ratio: 21/8; }
 
 @media (max-width: 760px){

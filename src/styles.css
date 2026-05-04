@@ -552,21 +552,13 @@ p.lead{
 }
 
 /* ======= Портфолио — bento grid ======= */
-/*
-  5 фото, 2-колоночная сетка, 4 ряда:
-  [tall-l  stack-r1]   ← tall-l spans rows 1–2
-  [tall-l  stack-r2]
-  [wide        wide]   ← full width
-  [bottom    bottom]   ← full width, landscape
-*/
 .gallery{
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   grid-template-areas:
-    "tall-l  stack-r1"
-    "tall-l  stack-r2"
-    "wide    wide";
+    "tall-l   stack-r1"
+    "stack-r2 wide";
 }
 .gallery__item{
   position: relative;
@@ -602,26 +594,24 @@ p.lead{
 }
 .gallery__item:hover .gallery__caption{ opacity: 1; transform: translateY(0); }
 
-.gallery__item--tall-l   { grid-area: tall-l; }
-.gallery__item--stack-r1 { grid-area: stack-r1; aspect-ratio: 16/9; }
-.gallery__item--stack-r2 { grid-area: stack-r2; aspect-ratio: 16/9; }
-.gallery__item--wide     { grid-area: wide;     aspect-ratio: 21/9; }
-.gallery__item--bottom   { grid-area: bottom;   aspect-ratio: 21/8; }
+.gallery__item--tall-l   { grid-area: tall-l;   aspect-ratio: 3/2; }
+.gallery__item--stack-r1 { grid-area: stack-r1; aspect-ratio: 3/2; }
+.gallery__item--stack-r2 { grid-area: stack-r2; aspect-ratio: 3/2; }
+.gallery__item--wide     { grid-area: wide;     aspect-ratio: 3/2; }
 
 @media (max-width: 760px){
   .gallery{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "tall-l   stack-r1"
-      "tall-l   stack-r2"
-      "wide     wide"
-      "bottom   bottom";
+      "tall-l"
+      "stack-r1"
+      "stack-r2"
+      "wide";
   }
-  .gallery__item--tall-l   { aspect-ratio: 3/4; }
-  .gallery__item--stack-r1 { aspect-ratio: 4/3; }
-  .gallery__item--stack-r2 { aspect-ratio: 4/3; }
-  .gallery__item--wide     { aspect-ratio: 16/7; }
-  .gallery__item--bottom   { aspect-ratio: 16/6; }
+  .gallery__item--tall-l,
+  .gallery__item--stack-r1,
+  .gallery__item--stack-r2,
+  .gallery__item--wide     { aspect-ratio: 4/3; }
 }
 
 /* ======= Цены / тизер ======= */

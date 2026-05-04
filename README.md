@@ -2,7 +2,7 @@
 
 This is a **handoff bundle** from Claude Design (claude.ai/design).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for re
+A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for r
 
 ## What you should do — IMPORTANT
 

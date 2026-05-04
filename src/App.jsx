@@ -529,10 +529,6 @@ function Contact() {
                 <span className="label">Склад и офис</span>
                 <span className="value">Санкт-Петербург,<br />ул. Большая Зеленина, 28</span>
               </div>
-              <div className="contact__row">
-                <span className="label">Время работы</span>
-                <span className="value">Ежедневно с 10:00 до 22:00</span>
-              </div>
             </div>
           </div>
           <ContactForm />
@@ -572,7 +568,6 @@ function Footer() {
               <li><a href="tel:+78121234567">+7 (812) 123-45-67</a></li>
               <li><a href="mailto:hello@svetdalubov.ru">hello@svetdalubov.ru</a></li>
               <li><a href="#" target="_blank" rel="noreferrer">Telegram</a></li>
-              <li><a href="#" target="_blank" rel="noreferrer">VK</a></li>
             </ul>
           </div>
         </div>

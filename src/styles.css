@@ -161,11 +161,14 @@ p.lead{
   transition: background .3s ease, backdrop-filter .3s ease, padding .3s ease;
 }
 .site-header.is-scrolled{
-  background: color-mix(in oklab, var(--bg) 86%, transparent);
+  background: rgba(14,13,11,0.86);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
+}
+[data-theme="light"] .site-header.is-scrolled{
+  background: rgba(245,239,227,0.92);
 }
 .site-header:not(.is-scrolled){
   background: linear-gradient(180deg, rgba(14,13,11,0.55) 0%, rgba(14,13,11,0) 100%);

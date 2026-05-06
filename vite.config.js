@@ -10,6 +10,7 @@ export default defineConfig({
     },
   },
   build: {
+    target: ['es2017', 'safari13'],
     rollupOptions: {
       output: {
         manualChunks: {

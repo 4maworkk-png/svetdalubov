@@ -295,13 +295,30 @@ function Process() {
   Row 4: bottom (full width, landscape crop)
 */
 const PORTFOLIO = [
-  { src: '/assets/gallery/g06.jpg', size: 'tall-l',   place: 'Банкетный зал', label: 'Свет + эффекты' },
-  { src: '/assets/gallery/g02.jpg', size: 'stack-r1', place: 'Сценический комплект',  label: 'Свет + звук' },
-  { src: '/assets/gallery/g05.jpg', size: 'stack-r2', place: 'Колонный зал',           label: 'Подсветка колонн' },
-  { src: '/assets/gallery/g01.jpg', size: 'wide',     place: 'Первый танец',           label: 'Свет + эффекты' },
+  '/assets/gallery/new1.jpg',
+  '/assets/gallery/new2.jpg',
+  '/assets/gallery/new3.jpg',
+  '/assets/gallery/new4.jpg',
+  '/assets/gallery/new5.jpg',
+  '/assets/gallery/new6.jpg',
 ]
 
 function Portfolio() {
+  const [current, setCurrent] = useState(0)
+  const total = PORTFOLIO.length
+  const touchStart = useRef(null)
+
+  const prev = () => setCurrent(i => (i - 1 + total) % total)
+  const next = () => setCurrent(i => (i + 1) % total)
+
+  const onTouchStart = e => { touchStart.current = e.touches[0].clientX }
+  const onTouchEnd = e => {
+    if (touchStart.current === null) return
+    const diff = touchStart.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev()
+    touchStart.current = null
+  }
+
   return (
     <section className="section" id="portfolio">
       <div className="container">
@@ -309,21 +326,45 @@ function Portfolio() {
           <span className="section-no">04 / Работы</span>
           <div className="section-head__title">
             <span className="eyebrow">Портфолио</span>
-            <h2 className="h-section">Свадьбы, <em>которые</em> мы вели</h2>
+            <h2 className="h-section">Мероприятия, <em>которые</em> мы вели</h2>
             <p className="section-head__lead">
               Кадры с реальных мероприятий — без постановки и фильтров. Каждый проект собирается индивидуально под площадку и сценарий.
             </p>
           </div>
         </div>
-        <div className="gallery reveal">
-          {PORTFOLIO.map((p, i) => (
-            <div className={`gallery__item gallery__item--${p.size}`} key={i}>
-              <img src={p.src} alt={p.place} loading="lazy" />
-              <div className="gallery__caption">
-                <span>{p.place}</span><span>{p.label}</span>
+        <div className="portfolio-slider reveal" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <div
+            className="portfolio-slider__track"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {PORTFOLIO.map((src, i) => (
+              <div className="portfolio-slider__slide" key={i}>
+                <img src={src} alt={`Мероприятие ${i + 1}`} loading="lazy" />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <button className="portfolio-slider__btn portfolio-slider__btn--prev" onClick={prev} aria-label="Предыдущий">
+            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <path d="M15 9H3M8 4L3 9l5 5"/>
+            </svg>
+          </button>
+          <button className="portfolio-slider__btn portfolio-slider__btn--next" onClick={next} aria-label="Следующий">
+            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <path d="M3 9h12M10 4l5 5-5 5"/>
+            </svg>
+          </button>
+
+          <div className="portfolio-slider__dots">
+            {PORTFOLIO.map((_, i) => (
+              <button
+                key={i}
+                className={`portfolio-slider__dot${i === current ? ' is-active' : ''}`}
+                onClick={() => setCurrent(i)}
+                aria-label={`Слайд ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

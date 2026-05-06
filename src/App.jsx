@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 /* ============== Иконки ============== */
 const Icon = {
@@ -511,7 +511,7 @@ function Contact() {
       <div className="container">
         <div className="contact reveal">
           <div className="contact__info">
-            <span className="eyebrow">06 / Связаться</span>
+            <span className="eyebrow">07 / Связаться</span>
             <h3>Расскажите о <em>вашей</em> свадьбе</h3>
             <p>
               Достаточно даты, площадки и пары слов о том, что вы хотите. Перезвоним и пришлём смету в день обращения.
@@ -536,6 +536,95 @@ function Contact() {
             </div>
           </div>
           <ContactForm />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ============== Reviews ============== */
+const REVIEWS = [
+  {
+    text: 'Ребята приехали за 5 часов до начала, всё смонтировали без суеты. Первый танец под тяжёлым дымом — гости были в восторге. Звук на банкете идеальный.',
+    name: 'Антон и Мария',
+    meta: 'Июнь 2024',
+    venue: 'Loft Place',
+  },
+  {
+    text: 'Работали с нами впервые и сразу вошли в ритм. Согласовали смету за один звонок, на площадке — никаких вопросов. Однозначно рекомендуем.',
+    name: 'Дмитрий и Анна',
+    meta: 'Август 2024',
+    venue: 'За городом',
+  },
+  {
+    text: 'Свет на церемонии был именно таким, как мы просили — мягким и тёплым. LED-экран для видеопоздравления сработал без сбоев. Спасибо команде!',
+    name: 'Сергей и Екатерина',
+    meta: 'Сентябрь 2024',
+    venue: 'Особняк на Каменном',
+  },
+]
+
+function ReviewCard({ text, name, meta, venue }) {
+  return (
+    <article className="review-card">
+      <div className="review-card__stars">
+        {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+      </div>
+      <p className="review-card__text">{text}</p>
+      <hr className="review-card__divider" />
+      <div className="review-card__author">
+        <span className="review-card__name">{name}</span>
+        <span className="review-card__meta">{meta} <span className="dot" /> {venue}</span>
+      </div>
+    </article>
+  )
+}
+
+function Reviews() {
+  const trackRef = useRef(null)
+  const [activeIdx, setActiveIdx] = useState(0)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+    const onScroll = () => {
+      const idx = Math.round(track.scrollLeft / track.offsetWidth)
+      setActiveIdx(idx)
+    }
+    track.addEventListener('scroll', onScroll, { passive: true })
+    return () => track.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const scrollTo = (idx) => {
+    const track = trackRef.current
+    if (!track) return
+    const card = track.children[idx]
+    const pl = parseInt(getComputedStyle(track).paddingLeft)
+    track.scrollTo({ left: card.offsetLeft - pl, behavior: 'smooth' })
+  }
+
+  return (
+    <section className="reviews" id="reviews">
+      <div className="reviews__container">
+        <div className="reviews__head">
+          <span className="reviews__no">06 / Отзывы</span>
+          <div className="reviews__head-right">
+            <span className="reviews__eyebrow">Отзывы</span>
+            <h2 className="reviews__title">Что говорят пары,<br /><em>которым мы помогли</em></h2>
+          </div>
+        </div>
+        <div className="reviews__grid">
+          {REVIEWS.map((r, i) => <ReviewCard key={i} {...r} />)}
+        </div>
+        <div className="reviews__slider">
+          <div className="reviews__slider-track" ref={trackRef}>
+            {REVIEWS.map((r, i) => <ReviewCard key={i} {...r} />)}
+          </div>
+        </div>
+        <div className="reviews__dots">
+          {REVIEWS.map((_, i) => (
+            <button key={i} className={activeIdx === i ? 'active' : ''} onClick={() => scrollTo(i)} />
+          ))}
         </div>
       </div>
     </section>
@@ -597,6 +686,7 @@ export default function App() {
         <Process />
         <Portfolio />
         <Pricing />
+        <Reviews />
         <Contact />
       </main>
       <Footer />

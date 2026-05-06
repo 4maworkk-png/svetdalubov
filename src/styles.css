@@ -144,11 +144,10 @@ p.lead{
 .btn--ghost{
   background: transparent;
   color: var(--text);
-  border-color: var(--line-strong);
+  border-color: var(--accent);
 }
 .btn--ghost:hover{
-  background: rgba(232, 215, 178, 0.06);
-  border-color: var(--accent);
+  background: rgba(212, 162, 76, 0.08);
   box-shadow: none;
 }
 
@@ -559,11 +558,8 @@ p.lead{
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  background: #0d0d0d;
+  background: transparent;
   user-select: none;
-}
-[data-theme="light"] .portfolio-slider {
-  background: #1a1a1a;
 }
 .portfolio-slider__track {
   display: flex;
@@ -588,9 +584,9 @@ p.lead{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.9);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #1A150A;
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -598,13 +594,13 @@ p.lead{
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
+  transition: transform .25s ease, box-shadow .25s ease;
   z-index: 10;
   padding: 0;
 }
 .portfolio-slider__btn:hover {
-  background: rgba(0,0,0,0.7);
-  border-color: rgba(255,255,255,0.4);
+  transform: translateY(calc(-50% - 2px));
+  box-shadow: 0 12px 40px var(--accent-glow);
 }
 .portfolio-slider__btn--prev { left: 16px; }
 .portfolio-slider__btn--next { right: 16px; }

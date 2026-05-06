@@ -584,23 +584,21 @@ p.lead{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: #1A150A;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  background: none;
+  border: none;
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform .25s ease, opacity .2s ease;
   z-index: 10;
-  padding: 0;
+  padding: 4px;
+  opacity: 0.85;
 }
 .portfolio-slider__btn:hover {
-  transform: translateY(calc(-50% - 2px));
-  box-shadow: 0 12px 40px var(--accent-glow);
+  transform: translateY(-50%) scale(1.2);
+  opacity: 1;
 }
 .portfolio-slider__btn--prev { left: 16px; }
 .portfolio-slider__btn--next { right: 16px; }

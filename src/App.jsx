@@ -131,7 +131,7 @@ function Hero() {
           </p>
           <div className="hero__sub">
             <a href="#contact" className="btn">Оставить заявку <Icon.Arrow /></a>
-            <a href="#portfolio" className="btn btn--ghost">Смотреть работы</a>
+            <a href="#portfolio" className="btn">Смотреть работы</a>
           </div>
         </div>
         <div className="hero__image" style={{ backgroundImage: 'url(/assets/portfolio/p04.jpg)' }} />
@@ -297,10 +297,10 @@ function Process() {
 const PORTFOLIO = [
   '/assets/gallery/new1.jpg',
   '/assets/gallery/new2.jpg',
+  '/assets/gallery/new6.jpg',
   '/assets/gallery/new3.jpg',
   '/assets/gallery/new4.jpg',
   '/assets/gallery/new5.jpg',
-  '/assets/gallery/new6.jpg',
 ]
 
 function Portfolio() {

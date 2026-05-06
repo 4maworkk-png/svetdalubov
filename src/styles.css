@@ -1012,7 +1012,7 @@ p.lead{
 
 /* ======= Отзывы ======= */
 .reviews {
-  background: #EDE8DF;
+  background: var(--bg);
   padding: clamp(64px, 8vw, 100px) 0;
   position: relative;
   overflow: hidden;
@@ -1079,7 +1079,7 @@ p.lead{
   gap: 20px;
 }
 .review-card {
-  background: #F5F0E8;
+  background: var(--bg-elev);
   border-radius: 6px;
   padding: 32px 28px 28px;
   display: flex;

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import SEO from './SEO'
 
 /* ============== Иконки ============== */
 const Icon = {
@@ -674,10 +675,36 @@ function Footer() {
 }
 
 /* ============== App ============== */
+const LOCAL_BUSINESS_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'СветДаЛюбовь',
+  url: 'https://svetdalubov.ru',
+  telephone: '+79219325350',
+  email: 'svetdalubov@mail.ru',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'ул. Бехтерева, 2',
+    addressLocality: 'Санкт-Петербург',
+    addressCountry: 'RU',
+  },
+  description: 'Техническое обеспечение свадеб в Санкт-Петербурге: звук, свет, сцена, монтаж и демонтаж под ключ.',
+  areaServed: ['Санкт-Петербург', 'Ленинградская область'],
+  priceRange: '₽₽',
+  sameAs: ['https://t.me/soundgarage98'],
+}
+
 export default function App() {
   useReveal()
   return (
     <>
+      <SEO
+        title="Аренда звука, света и сцены на свадьбу в СПб"
+        description="Техническое обеспечение свадеб в Санкт-Петербурге под ключ: звук, свет, сцена, монтаж и демонтаж. Выезд на любую площадку СПб и Ленобласти. Узнайте стоимость."
+        keywords="аренда звука на свадьбу спб, световое оборудование свадьба санкт-петербург, техническое обеспечение свадьбы, аренда сцены спб, звук свет свадьба цена"
+        url="https://svetdalubov.ru"
+        schema={LOCAL_BUSINESS_SCHEMA}
+      />
       <Header />
       <main>
         <Hero />

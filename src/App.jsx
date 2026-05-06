@@ -345,12 +345,12 @@ function Portfolio() {
           </div>
 
           <button className="portfolio-slider__btn portfolio-slider__btn--prev" onClick={prev} aria-label="Предыдущий">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <svg width="36" height="36" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M15 9H3M8 4L3 9l5 5"/>
             </svg>
           </button>
           <button className="portfolio-slider__btn portfolio-slider__btn--next" onClick={next} aria-label="Следующий">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <svg width="36" height="36" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M3 9h12M10 4l5 5-5 5"/>
             </svg>
           </button>
